@@ -10,6 +10,7 @@ public class Pair<K, V>{
         if(key == null){
             throw new NullPointerException("key can't be null");
         }
+
         this.key = key;
         this.value = value;
     }
@@ -28,11 +29,12 @@ public class Pair<K, V>{
         return new Pair<>(key, value);
     }
 
+    //Returning a string in the format "(Key: [key], Value: [value])"
     @Override
     public String toString() {
         return "(" +
-                "key=" + key +
-                ", value=" + value +
+                "key: " + key +
+                ", value: " + value +
                 ')';
     }
 
@@ -40,12 +42,14 @@ public class Pair<K, V>{
     // to compare pairs by both key and value
 
     @Override
+    //equals()
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Pair<?, ?> pair = (Pair<?, ?>) o;
         return Objects.equals(key, pair.key) && Objects.equals(value, pair.value);
     }
-
+    // hashcode()
     @Override
     public int hashCode() {
         return Objects.hash(key, value);
