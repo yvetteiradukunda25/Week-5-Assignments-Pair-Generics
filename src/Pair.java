@@ -6,10 +6,13 @@ public class Pair<K, V>{
     public Pair(K key, V value){
 
         //validation: key can not be null.
-
-        if(key == null){
-            throw new NullPointerException("key can't be null");
-        }
+       try {
+           if (key == null) {
+               throw new NullPointerException("key can't be null");
+           }
+       }catch (IllegalArgumentException e){
+           System.out.println("key can't be null");
+       }
 
         this.key = key;
         this.value = value;
