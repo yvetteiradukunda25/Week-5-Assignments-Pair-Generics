@@ -1,5 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+    Pair<String, Integer> pair1 = new Pair<>("Age", 25);
+    Pair<Integer, String> pair2 = new Pair<>(404, "Not found");
+        System.out.println("Pair 1: " + pair1.toString());
+        System.out.println("Pair 2: " + pair2.toString());
     }
 }
